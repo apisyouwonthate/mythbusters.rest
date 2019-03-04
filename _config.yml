@@ -1,0 +1,29 @@
+title: Mythbusters.REST
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  A lot of people talk about REST without actually understanding all that much about it.
+  We're here to help put that confusion to REST.
+url: "https://mythbusters.rest" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: apisyouwonthate
+github_username:  apisyouwonthate
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+collections:
+  - myths
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
