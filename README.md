@@ -9,7 +9,7 @@ If you would like to know when to use a specific paradigm over another, then [th
 If you would like to read some nonsense about REST that people have posted in their "I like GraphQL/gRPC/other but I didn't really understand REST so now I'm going to moan about REST" articles, then please do read on!
 
 - [ ] GraphQL is REST 2.0 (Well defined subset, missing HATEOAS and Cacheability)
-- [ ] REST means you have huge responses (Sparse Fieldsets)
+- [ ] REST means you have huge responses (Sparse Fieldsets) - Matt
 - [ ] Type Systems (Hi, JSON Schema exists + baton rouge meme)
 - [ ] REST means over-fetching
   - Compound Documents for HTTP/1 (JSON:API, OData, HAL)
