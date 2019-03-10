@@ -10,10 +10,18 @@ If you would like to read some nonsense about REST that people have posted in th
 
 - [ ] GraphQL is REST 2.0 (Well defined subset, missing HATEOAS and Cacheability)
 - [ ] REST means you have huge responses (Sparse Fieldsets) - Matt
-- [ ] Type Systems (Hi, JSON Schema exists + baton rouge meme)
-- [ ] REST means over-fetching
+- [ ] REST has no notion of Type Systems (Hi, JSON Schema exists + baton rouge meme)
+- [ ] Fetching X resources means X requests, means waiting X seconds
+  - They assume serial is required, ignoring Async
+  - https://philsturgeon.uk/php/2013/11/12/benchmarking-codswallop-nodejs-v-php/
   - Compound Documents for HTTP/1 (JSON:API, OData, HAL)
-  - HTTP/2 https://blog.apisyouwonthate.com/optimizing-for-the-speed-of-light-b465da26415c & https://blog.apisyouwonthate.com/lets-stop-building-apis-around-a-network-hack-9a68f7e83dd2
+  - HTTP/2 is a thing https://blog.apisyouwonthate.com/optimizing-for-the-speed-of-light-b465da26415c
+  - https://blog.apisyouwonthate.com/lets-stop-building-apis-around-a-network-hack-9a68f7e83dd2
+  - also http network caching means a lot of this content can skip the "Content Download" portion
+- [ ] REST means long polling for changes because it doesnt include subscriptions
+  - Nah you can do subscriptions however you like
+  - with WebSockets or web hooks, which are both useful for different scenarios
+  - https://medium.com/@philsturgeon/no-youre-describing-polling-and-complaining-that-rest-doesn-t-teach-you-how-to-use-webhooks-56df4ca58c5f?source=responses---------10---------------------
 - [ ] REST means URL versioning
   - Roy has said /v1 is RPC for a while, and evolution is a thing (see image)
   - https://blog.apisyouwonthate.com/api-evolution-for-rest-http-apis-b4296519e564
@@ -31,6 +39,9 @@ If you would like to read some nonsense about REST that people have posted in th
 - [ ] REST is only for CRUD
   - https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling
 
+
+
+
 # Articles
 
 Once we have the FAQ/FUD content up, we can start tagging commonly referenced articles with those FUDs. We'll keep a list here until we get around to doing it. PR in your "favourites".
@@ -38,3 +49,19 @@ Once we have the FAQ/FUD content up, we can start tagging commonly referenced ar
 - [ ] medium.freecodecamp.org/rest-apis-are-rest-in-peace-apis-long-live-graphql-d412e559d8e4
 - [ ] sitepoint.com/rest-2-0-graphql/
 - [ ] www.howtographql.com/basics/1-graphql-is-the-better-rest/
+- [ ] hackernoon.com/dive-into-graphql-part-i-whats-wrong-with-rest-709ebcb898dc#e286
+
+That last one has a lot of odd stuff in it, and I talked to the author a bunch which actually makes for some good content.
+
+
+> Yep, that’s 5 HTTP requests, 5 times the network latency, 5 times the battery drain. Over a 3G network, count at least 5 seconds for the list of tweets to show up on screen. That’s u...
+
+iOS lets you make 5 concurrent HTTP connections, so this would actually only be 1 second. http://blog.lightstreamer.com/2013/01/on-ios-url-connection-parallelism-and.html
+
+5x requests in serial is slower than 5 async requests.
+
+> REST doesn’t have the notion of schema, a contract that describes exactly what a web service is supposed to return. Just like with standards above, the absence of schema leads to the...
+
+REST does not care about it no, but JSON Schema exists and it’s a thing. A lot of people ignore it, and that winds me up, but it’s not a failure of REST.
+
+https://blog.apisyouwonthate.com/guessing-api-contracts-ac1b7eaebced
