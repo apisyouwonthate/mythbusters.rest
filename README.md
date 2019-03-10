@@ -30,3 +30,11 @@ If you would like to read some nonsense about REST that people have posted in th
   - REST holds up nicely with modern requirements and HTTP/2)
 - [ ] REST is only for CRUD
   - https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling
+
+# Articles
+
+Once we have the FAQ/FUD content up, we can start tagging commonly referenced articles with those FUDs. We'll keep a list here until we get around to doing it. PR in your "favourites".
+
+- [ ] medium.freecodecamp.org/rest-apis-are-rest-in-peace-apis-long-live-graphql-d412e559d8e4
+- [ ] sitepoint.com/rest-2-0-graphql/
+- [ ] www.howtographql.com/basics/1-graphql-is-the-better-rest/
