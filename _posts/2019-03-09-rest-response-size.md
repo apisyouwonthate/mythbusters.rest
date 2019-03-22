@@ -115,3 +115,24 @@ While this has more structure to the request, the data being sent back has been 
 ### Wrongly modeled data. 
 
 In conjunction with the above, another reason people complain about REST response sizes being so large is that developers have not modeled the data for the requests. Lets consider the example above. In it, we have two requests we are making, ```/api/users``` and ```/api/users/11122```. In the first request, we should return the least amount of data possible. When making the first GET request, which returns all the resources for the given endpoint, model your data to return the bare minimum. In this case, a userId and a name. 
+
+The idea here is instead of racing to code, take a step back and see what data is truly needed for the endpoint. If you have a users page, an organization chart let's just say, is it useful to have data surrounding their time at the company? Or maybe previous titles? That data is not useful in this case, so instead lets model our data to only return the following:
+
+```json
+{
+  "data": [
+    {
+      "type": "User",
+      "id": 1,
+      "attributes": {
+        "userId": "11122",
+        "name": "Crashy McCrashface",
+        "position": "Lead Bike Engineer",
+        "manager": "Stowford Turtle"
+      }
+    }
+  ];
+}
+```
+
+And that's all you need! Along with hypermedia, the other data is close by but now our response is more concise and easier to use. 
